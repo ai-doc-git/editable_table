@@ -19,7 +19,7 @@ st.markdown("<h1 style='text-align: center; color: rgb(0, 0, 0);'> PROTOTYPE </h
 uploaded_file = st.file_uploader("Upload data:")
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file,sep=';')
-    st.dataframe(df)
+    # st.dataframe(df)
 
 # df = pd.read_csv('dummy.csv',sep=';')
 
@@ -73,3 +73,4 @@ if uploaded_file is not None:
         df_filter['Adjustment'] = adj_number
         df_filter['Adjustment Date'] = datetime.datetime.now()
         st.dataframe(df_filter[['Product','Sub-Product','Reason','Month','Adjustment','Adjustment Date']].head(1), use_container_width=True)
+        st.snow()
